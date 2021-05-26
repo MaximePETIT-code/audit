@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+      AUDIT - accessibilité
+    </title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top p-3">
+      <a class="navbar-brand px-3" href="index.html">BOB AGENCY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-nav px-3">
+          <a class="nav-item nav-link" href="ux.html">Expérience utilisateur</a>
+          <a class="nav-item nav-link active" href="accessibilite.html">Accessibilité</a>
+          <a class="nav-item nav-link" href="htmlcss.html">HTML/CSS</a>
+          <a class="nav-item nav-link" href="javascript.html">Javascript</a>
+      </div>
+    </div>
+  </nav>
+    <header class="vh-45 bg-primary">
+      <section
+        class="text-light mx-0 row h-100 align-items-center justify-content-center text-center"
+      >
+        <article class="col-12 header-contain">
+          
+          <h1 class="fs-1 fw-bold">Audit Bob Agency <span class="fs-3">(par Maxime Petit)</span></h1>
+          <p class="fs-4">Expérience utilisateur, HTML/CSS, Accessibilité, Javascript / Jquery</p>
+
+        </article>
+      </section>
+    </header>
+    <main class="container pt-5">
+      <p class="fs-1 fw-bold">
+        <span>
+          Accessibilité</span>
+      </p>
+      <hr class="my-4 border-top border-3 border-dark" />
+      
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Manque de l'attribut title</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Il y a dans le footer des liens qui dirige notamment vers
+          les différents réseaux sociaux de l'IUT. Le problème est que les liens ne possèdent pas d'attribut title ce qui est très 
+          mauvais pour l'accessibilité. En effet, l'attribut titre permet d'afficher son contenu lorsque le lien 
+          est survolé par la souris. Il permet également à lire le lien par des machines à lire utilisées par
+          les aveugles. Alors, sans cet attribut, certaines personnes ne peuvent pas comprendre à quoi sert le lien et où il dirige.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/lien.JPG" class="img-fluid img" alt="Capture d'écran des liens dans le footer" />
+          <figcaption>
+            Voici la capture des liens dans le footer
+          </figcaption>
+          <img src="assets/images/lien-lectureecran.jpg" class="img-fluid img mt-4" alt="Capture d'écran des liens dans le footer vu par un lecteur d'écran" />
+          <figcaption>
+            Arrivez-vous à comprendre ce que permettent les liens ? C'est ce que lirait un lecteur d'écran
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Ajouter l'attribut "title" pour chaque lien (exemple : "Lien vers notre page Facebook").
+            </li>
+            <li>
+              Utiliser la classe "sr-only" qui est un nom de classe spécifiquement utilisé pour les
+              lecteurs d'écrans.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Balise non appropriés</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html", la balise span est utilisé pour un paragraphe. Il permet notamment
+          de grouper certains éléments textuels afin de les mettre en forme avec le CSS. Or, span doit être utilisé lorsque aucun autre élément sémantique
+          n'est approprié. Ici, la balise p serait plus appropriée. (Cela vaut également pour d'autres pages et notamment pour la page "debouchees.html" qui utilise "div", balise qui permet la 
+          division du contenu au lieu de la balise p). Les lecteurs d'écran utilisent les balises HTML pour se repérer dans la page, les utilisateurs de ses appareils
+          pourraient ne pas comprendre l'usage de certaines balises
+        </p>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#spanErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="spanErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height:18rem" readonly>
+<!-- accueil.html -->
+
+<span>
+  Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à
+  partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux
+  de communication) jusqu'en mai 2013, qui était lancé à la rentrée
+  universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël
+  et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels
+  que la licence professionnelle en activités et techniques de communication
+  et la licence professionnelle en systèmes informatiques et logiciels.
+</span>
+
+<!-- debouchees.html -->
+
+<li class="col-6 mb-3">
+
+  <h7 class="fs-3 fw-bold">Chef de projet web</h7>
+  
+  <div class="mb-2">Passionné de marketing et doué en technique internet, il coordonne toutes les parties prenantes de la structure dans laquelle il travaille (agence de communication, entreprise, annonceurs).</div>
+  
+  <div class="mb-2">Il est le responsable de la mise en œuvre globale d’un projet internet.</div>
+  
+</li>
+</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Remplacer la balise span par la balise p.
+            </li>
+            <li>
+              Remplacer la balise div par la balise p.
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#spanReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="spanReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height:18rem" readonly>
+<!-- accueil.html -->
+
+<p>
+  Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à
+  partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux
+  de communication) jusqu'en mai 2013, qui était lancé à la rentrée
+  universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël
+  et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels
+  que la licence professionnelle en activités et techniques de communication
+  et la licence professionnelle en systèmes informatiques et logiciels.
+</p>
+
+<!-- debouchees.html -->
+
+<li class="col-6 mb-3">
+
+  <h7 class="fs-3 fw-bold">Chef de projet web</h7>
+  
+  <p class="mb-2">Passionné de marketing et doué en technique internet, il coordonne toutes les parties prenantes de la structure dans laquelle il travaille (agence de communication, entreprise, annonceurs).</p>
+  
+  <p class="mb-2">Il est le responsable de la mise en œuvre globale d’un projet internet.</p>
+  
+</li></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Mauvaise utilisation de la balise br</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html", la balise br est utilisé deux fois de suite dans le 
+          but d'ajouter un espace entre les paragraphes, or, la balise br est utilisée lorsque les sauts de ligne ont une importance.
+          L'utilisation de br représente ici une mauvaise pratique puisque la balise br sera indiquée pour les utilisateurs de lecteurs
+          d'écran alors qu'elle n'apporte rien ce qui peut apporter une confusion chez l'utilisateur.
+        </p>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#brErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="brErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 18rem" readonly>
+<p>
+  Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à
+  partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux
+  de communication) jusqu'en mai 2013, qui était lancé à la rentrée
+  universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël
+  et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels
+  que la licence professionnelle en activités et techniques de communication
+  et la licence professionnelle en systèmes informatiques et logiciels.
+</p>
+<br><br></textarea>              
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Utiliser la propriété "margin" en css à la place de la balise "br".
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#brReco"
+                aria-expanded="true"
+              >
+                Code HTML et CSS associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="brReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height:18rem" readonly>
+<div class="margin">
+  
+  <p>
+    Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à
+    partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux
+    de communication) jusqu'en mai 2013, qui était lancé à la rentrée
+    universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël
+    et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels
+    que la licence professionnelle en activités et techniques de communication
+    et la licence professionnelle en systèmes informatiques et logiciels.
+  </p>
+
+</div>
+
+<style>
+  .margin{
+    margin-bottom: 15px;
+  }
+</style></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Niveau de titre sauté</span>
+        </p>
+
+        <p> 
+          <span class="fw-bold">Problème :</span> Dans plusieurs pages du site, les niveaux de titre sont "sautés". Par exemple, dans la page
+          "debouchee.html" on passe d'un titre de niveau 1
+          à un titre de niveau 7. Cela pose un problème d'accessibilité étant donné que les utilisateurs utilisant des lecteurs 
+          d'écran utilisent les niveaux de titres pour se repérer dans une page. L'absence d'un des niveaux peut donc amener de l'incompréhension
+          chez l'utilisateur.
+        </p>
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Respecter l'ordre des balises de titre : h1, h2, h3, h4, h5, h6.
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Absence de balise de titre</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html" par exemple, les noms de chaque compétence sont dans des balises p tout comme
+          leur description, alors qu'ils devraient être dans une balise de titre étant donné que le nom de la compétence est plus important que la description.
+          Les balises de titre sont particulièrement utiles aux personnes utilisant des lecteurs d'écran puisque celui-ci indique le niveau de titre.
+        </p>
+
+        <figure class="text-muted text-center">
+          <img src="assets/images/titre.jpg" class="img-fluid img" alt="Capture d'écran de la liste de compétences dans la page accueil.html" />
+          <figcaption>
+            Capture de la liste de compétences dans la page "accueil.html".
+          </figcaption>
+        </figure>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#titreErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="titreErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: auto;" readonly>
+<p class="fs-4 fw-bold">Développement web</p>
+<p>Initier les étudiants et les étudiantes aux bases de la programmation de pages HTML.</p></textarea>             
+</div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Utiliser la balise de titre h3
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#titreReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="titreReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: auto;" readonly>
+<h3 class="fs-4 fw-bold">Développement web</h3>
+<p>Initier les étudiants et les étudiantes aux bases de la programmation de pages HTML.</p></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Manque de l'attribut alt</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html" et les autres pages, les images ne disposent pas de l'attribut alt. L'attribut alt permet d'afficher 
+          un texte ayant pour but de remplacer l'image. Cependant, étant donné qu'il n'y a pas d'attribut alt pour les images, si jamais une image ne charge pas
+          l'utilisateur ne pourra pas savoir à quoi l'image correspond. L'attribut alt est également utile pour les utilisateurs de lecteur d'écran, sans cette information 
+          impossible de savoir l'information portée par l'image.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/images.jpg" class="img-fluid img" alt="Capture d'écran des images dans la page accueil" />
+          <figcaption>
+            Capture des images dans la page "accueil.html".
+          </figcaption>
+          <img src="assets/images/images-lectureecran.jpg" class="img-fluid img mt-4" alt="Capture d'écran des images dans la page accueil vu par un lecteur d'écran" />
+          <figcaption>
+            Arrivez-vous à comprendre à quoi correspondent les images ? C'est ce que lirai un lecteur d'écran
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter un attribut alt pour chaque image (hormis les images décoratives).
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Manque de la balise abbr</span>
+        </p>
+        <p class="fw-bold">
+          <span
+            >Statut : critique</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans le header, il y a bien la présence de l'élément abbr concernant DUT MMI 
+          cependant il est absent pour celui du BUT MMI. L'élément abbr permet de fournir la signification d'une abréviation à travers 
+          l'attribut title. Il permet donc la bonne compréhension des abréviations dans un site. Alors, l'abréviation "BUT MMI" ne peut pas être
+          comprise par l'utilisateur via le survol de la souris comme il peut le faire pour le DUT MMI. 
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/abbr.jpg" class="img-fluid img" alt="Capture d'écran des abréviations dans le header du site" />
+          <figcaption>
+            Capture des abréviations dans le header du site.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter la balise abbr avec un attribut title correspondant pour chaque abréviation sur le site.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Utilisation de target="blank"</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans le footer, le lien vers la page facebook utilise l'attribut target
+          accompagné du mot clef "_blank" permettant d'ouvrir le lien dans un nouvel onglet. Cela peut être assez problématique notamment d'un point de vue sécurité étant donné que 
+          target="_blank" est utilisé sansrel="noreferrer" et "noopener" ce qui peut rendre le site vulnérable à des attaques via window.opener. 
+          De plus, il n'est pas précisé que le lien s'ouvre dans un nouvel onglet. Les personnes qui utilisent des lecteurs d'écran et les personnes souffrant de trouble de la vision
+          peuvent être surpris que le lien s'ouvre dans un nouvel onglet (d'autant plus que cela s'applique uniquement pour la page facebook).
+        </p>
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Ajouter une indication sur ce que se produira lorsque l'on clique sur le lien.
+            </li>
+            <li>
+              OU supprimer le target="_blank".
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Image à la place de texte</span>
+        </p>
+        <p class="fw-bold">
+          <span
+            >Statut : critique</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html", la section concernant les mentions légales est sous forme d'image alors qu'elle
+          devrait être faite en utilisant les balises HTML comme "p", "h1" ou encore "a". Cela pose de nombreux problèmes avec notamment un problème de lisibilité (d'autant plus qu'il est appliqué 
+          une oppacité de 0.6 à l'image via le css) mais également un problème d'interaction puisqu'il est impossible de sélectionner le texte ou de cliquer sur un lien. Cela pose encore 
+          plus problème pour les utilisateurs utilisant un lecteur d'écran puisqu'ils ne pourront pas avoir accès au contenu textuel des mentions légales.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/mentionslegales.jpg" class="img-fluid img" alt="Capture d'écran des mrntions légales dans la page d'accueil" />
+          <figcaption>
+            Capture des mentions légales dans la page "accueil.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Remplacer l'image par du HTML en utilisant les balises appropriées.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Texte dans une autre langue que le français</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html", dans la modale de gestion des cookies ou encore dans les erreurs du formulaire dans la page "contact.html", il y a des textes en langue étrangère
+          (anglais et latin). Cela peut poser un problème de compréhension aux personnes ne parlant pas cette langue mais également pour les lecteurs d'écrans puisque,
+          étant donné que la page HTML est difinie par lang="fr", la prononciation sera faussé et la compréhension encore plus compliquée.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/langue.jpg" class="img-fluid img" alt="Capture d'écran de la page d'accueil et de la modale de gestion des cookies" />
+          <figcaption>
+            Capture de la page "accueil.html" et de modale de gestion des cookies
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Remplacer les textes écrits en anglais ou en latin par du Français.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+    
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Mauvaise lisibilité</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la liste des débouchés sur la page "debouche.html", il n'y a 
+          aucune marge entre les différentes boîtes contenant le nom du métier et la description. Cela pose un
+          problème de lisibilité. De plus, lorsque l'on passe sur un terminal plus petit comme celui d'un iPhone, il 
+          est encore plus difficile de lire le texte.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/marge.jpg" class="img-fluid img" alt="Capture d'écran de la liste des débouchés avec une absence de marge sur la page debouchee.html" />
+          <figcaption class="capture-texte">
+            Voici la capture de la liste des débouchés avec une absence de marge sur la page "debouchee.html".
+          </figcaption>
+          <img src="assets/images/lisibilite.jpg" class="img-fluid img mt-5" alt="Capture d'écran de la liste des débouchés sur un iPhone X sur la page debouchee.html" />
+          <figcaption class="capture-texte">
+            Voici la capture de la liste des débouchés sur un iPhone X sur la page "debouchee.html".
+          </figcaption>
+        </figure>
+        
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons l'axe 
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter une marge entre chaque élément pour améliorer la lisibilité
+            </li>
+            <li>
+              Placer un élément par ligne sur des terminaux plus petits
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Mauvais contraste de couleurs</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html", lorsque l'on sélectionne un article,
+          le contraste entre le texte et le fond est très mauvais étant donné que le fond et le texte deviennent de
+          la même couleur (blanc sur blanc). L'article et son prix deviennent donc illsibile : l'utilisateur n'a pas
+          d'autres choix que de désélectionner l'article pour voir le texte.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/contraste.JPG" class="img-fluid img" alt="Capture d'écran des articles dans la page contact.html />
+          <figcaption>
+            Capture des articles dans la page "contact.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'accessibilité, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Utiliser des couleurs ayant un contraste correct entre le fond et le texte.
+            </li>
+            <li>
+              Vous pouvez utiliser un Contrast Checker pour être certain que le contraste est correct. <a href="https://coolors.co/contrast-checker/ffffff-ffffff" target=_blank>Exemple de contrast checker (ouverture dans un nouvel onglet)</a>
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+
+      
+
+    </main>
+
+    <footer class="my-2 pb-2 pt-2 text-muted text-center text-small">
+      <p class="mb-1">
+        &copy; Maxime Petit MMI1 2021
+      </p>
+      <ul class="list-inline">
+        
+        <li class="list-inline-item">
+          <a title="Consignes du devoir" href="http://danyellow.net/devoir-mmi/consignes.html" >Consignes</a>
+        </li>
+        <li class="list-inline-item" aria-hidden="true">•</li>
+        <li class="list-inline-item">
+          <a title="Page Accueil" href="index.html">Accueil</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Expérience utilisateur" href="ux.html" >Expérience utilisateur</a>
+        </li>
+          <li class="list-inline-item">
+            <a title="Page Accessibilité" href="accessibilite.html" >Accessibilité</a>
+        </li>
+        <li class="list-inline-item">
+        <a title="Page HTML/CSS" href="htmlcss.html" >HTML/CSS</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Javascript" href="javascript.html">Javascript</a>
+            </li>
+      </ul>
+    </footer>
+  
+
+  </body>
+</html>

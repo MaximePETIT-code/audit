@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+      AUDIT - Expérience utilisateur
+    </title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top p-3">
+      <a class="navbar-brand px-3" href="index.html">BOB AGENCY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-nav px-3">
+          <a class="nav-item nav-link active" href="ux.html">Expérience utilisateur</a>
+          <a class="nav-item nav-link" href="accessibilite.html">Accessibilité</a>
+          <a class="nav-item nav-link" href="htmlcss.html">HTML/CSS</a>
+          <a class="nav-item nav-link" href="javascript.html">Javascript</a>
+      </div>
+    </div>
+  </nav>
+    <header class="vh-45 bg-primary">
+      <section
+        class="text-light mx-0 row h-100 align-items-center justify-content-center text-center"
+      >
+        <article class="col-12 header-contain">
+          
+          <h1 class="fs-1 fw-bold">Audit Bob Agency <span class="fs-3">(par Maxime Petit)</span></h1>
+          <p class="fs-4">Expérience utilisateur, HTML/CSS, Accessibilité, Javascript / Jquery</p>
+
+        </article>
+      </section>
+    </header>
+    <main class="container pt-5">
+      <p class="fs-1 fw-bold">
+        <span>
+          Expérience utilisateur</span>
+      </p>
+      <hr class="my-4 border-top border-3 border-dark" />
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Scroll infini</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> La page "accueil.html" possède un scroll infini qui affiche des photos 
+          de chats à ne plus en finir. Bien que les réseaux sociaux utilisent ce système afin de captiver l'utilisateur
+          dans le but de le garder le plus longtemps possible sur l'application, <span class="fw-bold">il ne s'agit absolument pas d'une bonne expérience
+            de navigation</span>. En effet, le problème principal que pose ce scroll est que l'utilisateur a du mal à trouver l'information
+          qu'il souhaite ce qui lui donne le <span class="fw-bold">sentiment de perdre son temps</span> étant donné qu'il n'y a pas de signaux d'arrêts comme on
+          pourrait le retrouver lors d'une recherche google. Le fondateur du scroll infini lui-même, Aza Raskin, exprime que le scroll infini
+          est une perte de millions d'heures d'utilisation à l'échelle humaine. De plus, le scroll infini rend très compliqué d'accès les mentions 
+          légales ainsi que le footer.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/scroll-infini.jpg" class="img-fluid img m-5" alt="Capture d'écran du scroll infini de la page d'accueil" />
+          <figcaption class="mb-5">
+            Capture du scroll infini sur la page "accueil.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Fixer le nombre de photos affiché sur la page (15 par exemple).
+            </li>
+            <li>
+              Remplacement du scroll infini par un système de pagination (ordre des pages avec un bouton "page suivante").
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Abscence d'une politique de confidentialité</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Étant donné que le site collecte des données (cookies) il est dans l'obligation, d'après le règlement européen "RGPD" d'avoir une politique de confidentialité.
+          Cependant, le site ne respecte pas cette loi. En effet, malgré la présence d'un lien "politique de confidentialité", celui-ci n'est pas indiqué comme tel (pas de soulignement ou couleur différente) et mène vers une page inexistante. On peut comprendre
+          qu'il ne s'agit pas d'une erreur lors de la mise en ligne du site mais bien un acte volontaire puisque le lien mène vers "/dev/null.html".
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/confidentialité.jpg" class="img-fluid img" alt="Capture d'écran du lien politique de confidentialité menant vers une page inexistante." />
+          <figcaption class="capture-texte">
+            Lien "politique de confidentialité" menant vers une page inexistante.
+          </figcaption>
+        </figure>
+        
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes 
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Rédiger une politique de confidentialité
+            </li>
+            <li>
+              Ajouté un indice de lien pour éviter de le confondre avec le texte (couleur différente, soulignement)
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Icône cookies</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> La gestion des cookies ainsi que l'envoie du formulaire de la page "contact.html "
+          est accessible en cliquant sur un icône. Cependant,
+          il faut savoir que la <span class="fw-bold">signification des icônes n'est pas universelle</span> et que tout
+          le monde ne connaît pas leur signification. Ici l'icône pour la gestion des cookies n'est clairement pas significatif.
+          En effet, cet icône est particulièrement original pour son utilisation ce qui est une mauvaise idée ! Les utilisateurs
+          développent des habitudes d'interaction qui leur permette de savoir sur quel bouton cliquer pour permettre l'action souhaitée sur
+          n'importe quel site (c'est ce que l'on appelle l'affordance). Or, avec cet icône, l'utilisateur n'a pas d'autres choix que de se forcer à réfléchir à quoi il pourrait correspondre ce 
+          qui lui mène à une perte de temps. Cela vaut également pour la flèche permettant d'envoyer le formulaire dans la page contact, l'utilisateur peut hésiter sur sa fonction
+          : renvoie-t-elle en arrière ou permet-elle d'envoyer le formulaire ? (D'autant plus que la flèche va vers la gauche ce qui tend plus vers un retour en arrière qu'un envoi).
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/icone-cookies.jpg" class="img-fluid img" alt="Capture d'écran icone cookies" />
+          <figcaption>
+            Voici l'icône permettant d'accéder à la gestion des cookies.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Utiliser un icône un peu plus significatif rappelant la gestion des cookies.
+            </li>
+            <li>
+              Mettre du texte accompagné de l'icône (gestion des cookies).
+            </li>
+            <li>
+              Ajouter l'attribut "title" indiquant vers où mène l'icône (gestion des cookies).
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Fenêtre modale gestion des cookies</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> La fenêtre modale permettant la gestion des cookies présente des points assez
+          problématiques. Tout d'abord la gestion des cookies pourrait être faite autrement que par l'apparition d'un pop-up (ce qui est
+          assez mauvais pour l'expérience utilisateur). En plus de ça, la fenêtre continue de s'ouvrir sur chaque page ce qui très
+          problématique et peut pousser l'utilisateur à fuir le site. De plus, du fait qu'il y ait énormément d'options à accepter ou refuser,
+          la fenêtre modale est particulièrement grande en terme d'hauteur (d'autant plus sur des petits formats d'écran). 
+          Cependant, il y a une fonction permettant d'aller plus vite si l'utilisateur souhaite tout accepter. Le problème est que ce bouton
+          se situe en bas de la fenêtre modale, ce qui est donc tout à fait inutile.
+
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/popup-cookies.jpg" class="img-fluid img" alt="Capture d'écran de la fenêtre modale de gesion des cookies" />
+          <figcaption>
+            Voici la fenêtre modale de gestion des cookies
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Favoriser une gestion des cookies fixés en bas de page (cela permet à l'utilisateur d'avoir tout de même accès au contenu).
+            </li>
+            <li>
+              Afficher toutes les options à Refuser/Accepter via un bouton "plus d'options" (cela permet d'optimiser la place).
+            </li>
+            <li>
+              Placer le bouton "Accepter tout" de manière plus évidente pour l'utilisateur.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Bouton accepter/refuser cookies</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Les boutons Accepter et Refuser ne respectent pas l'affordance. En effet, le bouton "Accepter" est censé être vert
+          tandis que le bouton "Refuser" est censé être rouge. Alors, si l'utilisateur ne fait pas attention, il peut penser que les cookies sont
+          refusés cependant ce n'est pas le cas. Il s'agit ici d'un <span class="fw-bold">dark pattern</span> <span class="fst-italic">(interface utilisateur qui a été soigneusement conçue pour tromper ou manipuler un utilisateur)</span> puisque le site pousse à prendre la décision d'accepter les cookies,
+          d'autant plus que tous les paramètres sont acceptés par défaut).
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/boutons-cookies.jpg" class="img-fluid img" alt="Capture d'écran boutons accepter et refuser" />
+          <figcaption>
+            Boutons accepter/refuser
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Échanger la couleur des boutons (rouge pour refuser, vert pour accepter)
+            </li>
+            <li>
+              Mettre les paramètres en refuser par défaut
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Le slider</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Un slider s'agit de bannières diaporamas pouvant contenir des images, du texte
+          ou autre contenu qui défilent. Ici, le slider dans la page "projets.html", s'agit d'images de projets qui défilent avec un lien menant au projet en question.
+          Cependant, cela représente une mauvaise pratique pour l'expérience utilisateur En effet, certains
+          utilisateurs pourraient avoir du mal à l'utiliser. De plus, le fait de subir le contenu peut gêner l'utilisateur. <br>
+          D'ailleurs, des statistiques et études prouvent que les sliders ne sont pas une bonne idée. En effet, Erik Runyon par exemple
+          a un article sur le sujet. Il a observé le comportement des utilisateurs sur un site internet comportant un slider en page d'accueil.
+          Cette étude à montrer que seulement 1% des utilisateurs ont cliqué sur un des sliders de la page, ce qui est très peu. De plus, parmi les 1%
+          des utilisateurs, presque 90% ont cliqué sur le premier slider. Cela veut dire que les sliders n'étant pas à la première place ont très peu
+          de chances d'être cliquecliquésr. Or, on peut remarquer que le slider de la page "projets.html" possède 29 diapositives : l'intérêt est donc presque nul puisque
+          le slider apparait uniquement comme un banner blindness pour l'utilisateur.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/slider.jpg" class="img-fluid img" alt="Capture d'écran du slider de la page projet" />
+          <figcaption>
+            Voici le slider présent sur la page "projets.html"
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Favoriser l'utilisation d'images fixes
+            </li>
+            <li>
+              Bannière avec l'information la plus importante
+            </li>
+            <li>
+              Utiliser un slider uniquement sur des terminaux tactiles (tout en faisant attention au nombre d'éléments)
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Lancement automatique d'une vidéo avec son</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html", une vidéo se lance de manière automatique avec le son
+          tout en masquant le bouton pause de la vidéo (avec la propriété css "display: none"). Cela représente une très mauvaise pratique et donne l'envie
+          immédiate à l'utilisateur de quitter le site étant donné qu'il a le sentiment de perdre le contrôle et de subir le contenu
+          (d'autant plus que le son de la vidéo est activé et qu'il est compliqué de mettre la vidéo en pause).
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/video.jpg" class="img-fluid img" alt="Capture d'écran de la vidéo automatique de la page contact" />
+          <figcaption>
+            Vidéo automatique de la page "contact.html"
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Ne pas automatiser la lecture de la vidéo (encore moins avec le son)
+            </li>
+            <li>
+              Afficher le bouton lecture/pause de la vidéo
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+
+      
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Page longue à charger</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> La page "projets.html" est particulièrement longue à charger. En effet, la console de Google chrome
+          indique que la page à charger en 21.14s avec une connexion de 90 Mbps. Le temps de chargement est beaucoup trop long : certaines images mettent quasiment 
+          une seconde à se charger alors qu'elles ne sont pas particulièrement lourdes. Ce temps de chargement est donc dû au slider qui est assez coûteux en ressource.
+          <br>La page "contact.html" est elle aussi particulièrement longue à charger. Cela est dû au fait que l'image "iut-sarcelles.jpg" soit beaucoup trop grande et donc beaucoup
+          trop volumineuse. En effet, l'image fait 14617x14629 px alors qu'elle est redimensionnée à 136x136.1 sur le site à l'aide de propriétés CSS. Il est donc totalement inutile d'avoir une si grande image.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/performance.jpg" class="img-fluid img" alt="Capture d'écran de l'inspecteur de google pour la page projets.html" />
+          <figcaption>
+            Capture de l'inspecteur de google pour la page "projets.html"
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Ne plus utiliser le slider.
+            </li>
+            <li>
+              Réduire la taille des images via un logiciel tel que Photoshop à la place de les réduire en utilisant des propriétés CSS.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Attribut srcset</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans les pages contenant des images, soit l'attribut srcset ne sont pas utilisées soit il n'est pas bien utilisé. 
+          L'attribut srcset permet d'indiquer si l'image doit changer en fonction du périphérique. Cela permet donc d'optimiser le temps de chargement des images 
+          sur les différents périphériques en listant des images avec différentes résolutions. Le navigateur choisirait la résolution et donc l'image la plus pertinante.
+          Sur le site, l'attribut srcset n'est pas utilisé hormis sur la page "accueil.html" sur l'image des mentions légales. Cependant, les images renseignées sont 
+          toutes identiques : elle ne possède donc pas réellement de dansité différente. L'attribut srcset n'a donc aucune utilité ici.
+        </p>
+        
+        <figure class="text-muted text-center">
+          <img src="assets/images/srcset.jpg" class="img-fluid img" alt="Capture d'écran de l'inspecteur de google concernant l'attribut srcset sur la page accueil.html" />
+          <figcaption class="capture-texte">
+            Voici la capture de l'inspecteur de google concernant l'attribut srcset sur la page "accueil.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter l'attribut srcset sur les balises img.
+            </li>
+            <li>
+              Avoir réellement des images de résolutions différentes.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Pas d'indice de la page active</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Lorsqu'on est sur l'une des pages du site (présentation, projets, débouchés ou contact) il est très compliqué
+          de comprendre dans quelle page on se situe à partir de la ligne de flottaison. Le header est particulièrement grand (75vh) et le titre de la page n'est pas juste en dessous du header ce qui rend impossible à l'utilisateur de savoir dans quel page il est au premier regard (particulièrement pour
+          la page debouches.html qui commence avec une barre de compétence sans aucun texte à côté pour l'accompagner). On ne peut pas non plus distinguer dans le menu quelle page est active. 
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/flottaison.png" class="img-fluid img" alt="Schéma de la ligne de flottaison" />
+        </figure>
+        
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter une balise h2 contenant le titre de la page active juste en dessous du header
+            </li>
+            <li>
+              Ajouter un élément qui rend compte de la page active (couleur différente par exemple)
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Manque d'un favicon</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Un favicon est un icône symbolisant un site web. Il est utilisé dans la barre d'adresse, les onglets 
+          et les raccourcis. Cependant, le site n'en dispose pas ce qui fait que l'utilisateur n'identifie pas directement le site web.
+        </p>
+        
+        <figure class="text-muted text-center">
+          <img src="assets/images/favicon.JPG" class="img-fluid img" alt="Capture d'écran de l'onglet du site" />
+          <figcaption class="capture-texte">
+            Voici à quoi ressemble l'onglet du site web.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajout d'un favicon.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Manque de texte de subtitution pour les formulaires</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html" et "debouchees.html", il manque de placeholder dans certains
+          champs. Il permet à l'utilisateur de bien comprendre ce qu'il doit remplir. 
+        </p>
+        
+        <figure class="text-muted text-center">
+          <img src="assets/images/placeholder.jpg" class="img-fluid img" alt="Capture d'écran du formulaire de la page contact.html concernant la date de naissance." />
+          <figcaption class="capture-texte">
+            Capture du formulaire de la page "contact.html" concernant la date de naissance.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter un placeholder pour chaque input et textarea.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Absence de libellé</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html" il manque un libellé pour le champ de l'adresse mail.
+          Le libellé est un élément indispensable puisqu'il représente la légende d'un objet au sein d'un site. Ici, l'utilisateur
+          pourrait avoir du mal à comprendre à quoi correspond le champ.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/nolabel.jpg" class="img-fluid img" alt="Capture du champ e-mail du formulaire de la page contact" />
+          <figcaption>
+            Capture du champ e-mail du formulaire de la page "contact.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter un libellé pour chaque champ.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Entrer le numéro de téléphone via une liste d'options</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html", le formulaire demande de renseigner un numéro de téléphone. Le problème est 
+          que le site propose de le faire via une liste d'option alors que l'utilisateur pourrait simplement entrer son numéro de téléphone. Entrer son numéro
+          de téléphone est une tâche rapide habituellement, mais via le formulaire de la page contact il s'agit d'une tâche longue et redondante étant donné que
+          la liste d'options est particulièrement longue.
+        </p>
+        
+        <figure class="text-muted text-center">
+          <img src="assets/images/telephone.jpg" class="img-fluid img" alt="Capture du formulaire de la page contact.html concernant le numéro de téléphoner" />
+          <figcaption class="capture-texte">
+            Capture du formulaire de la page "contact.html" concernant le numéro de téléphone
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Remplacer la liste d'options par un input de type numérique.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Empêcher le redimensionnement de textarea</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Par défaut, la balise textarea peut se redimensionner mais dans la page "contact.html", cette option est
+          désactivé. Il s'agit cependant d'une très mauvaise idée de désactiver cette option parce que l'utilisateur peut être frustré de ne pas pouvoir
+          la redimensionner comme il peut le faire habituellement. De plus, la balise textarea possède une hauteur très petite. L'action de rédiger
+          un message peut donc devenir très vite complexe.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/textarea.jpg" class="img-fluid img" alt="Capture d'écran du textarea de la page contact.html" />
+          <figcaption>
+            Capture du textarea du formulaire de la page "contact.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Éviter la désactivation de l'option de redimentionnement.
+            </li>
+            <li>
+              Augmenter l'hauteur de la balise textarea.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Radio au lieu de checkbox</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans le formulaire de la page "contact.html", la partie "je suis"
+          devrait être des checkbox mais il s'agit ici de radio. Alors, l'utilisateur ne peut sélectionner deux éléments distincts
+          (par exemple Parent et Salarié/Salariée) ce qui pose problème.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/radio.jpg" class="img-fluid img" alt="Capture d'écran des radios du formulaire de la page contact" />
+          <figcaption>
+            Capture des radios du formulaire de la page "contact.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Remplacer les radios par des checkbox.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Checkbox coché par défaut</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html", à la fin du formulaire il nous est proposé de s'inscrire à la newsletter
+          et d'envoyer les coordonnées aux responsables du BUT MMI. Cependant, les checkbox sont cochés par défaut ce qui représente un dark pattern. En
+          effet, l'utilisateur pourrait envoyer le formulaire sans faire attention aux cases cochées et donc s'inscrire et envoyer ses coordonnées contre
+          son plein gré.
+        </p>
+        
+        <figure class="text-muted text-center">
+          <img src="assets/images/checkbox.jpg" class="img-fluid img" alt="Capture du formulaire de la page contact.html concernant l'inscription à la newsletter et l'envoi de coordonnées." />
+          <figcaption class="capture-texte">
+            Capture du formulaire de la page "contact.html" concernant l'inscription à la newsletter et l'envoi de coordonnées.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Garder les checkbox décochés par défaut pour être certain du consentement de l'utilisateur
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+
+
+
+
+
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Aucun indice champ requis/non requis</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Le formulaire de la page "contact.html" contient des champs requis et des champs non requis.
+          Cependant, à moins d'envoyer une première fois un formulaire incomplet, impossible pour l'utilisateur de savoir quels champs est requis
+          ou non ce qui peut lui amener à perdre son temps.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/required.jpg" class="img-fluid img" alt="Capture d'écran des différents champs du formulaire de la page contact" />
+          <figcaption>
+            Comment savoir que le champ "Nom de famille" est requis tandis que le champ "date de naissance" ne l'est pas ?
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter une distinction pour les champs requis (présence d'un "<span class="fw-bold text-danger">*</span>" par exemple avec une légende)
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Nom d'erreur pas claire</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Lorsque l'on transmet un formulaire incomplet dans la page "contact.html", nous avons
+          des messages d'erreurs ce qui est une bonne chose. Cependant, les messages d'erreurs sont parfois trop flous comme le montre par exemple
+          la capture d'écran ci-dessous.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/messageerreur.jpg" class="img-fluid img" alt="Capture d'écran du message d'erreur pour le formulaire de la page contact" />
+          <figcaption>
+            Capture d'écran pour le champ prénom du formulaire de la page "contact.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter un message d'erreur plus clair et compréhensible par l'utilisateur.
+            </li>
+          </ul>
+        </section>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Libellé et élément du formulaire non lié</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "contact.html", les libellés ne sont pas toujours liés à leurs éléments
+          de formulaire (par exemple l'input "prénom" ou encore la textarea "message") Bien que l'utilisation de "for" soit faculatatif, il est tout de même indispensable : il permet de pouvoir cliquer sur
+          le libellé pour activer le champ correspondant. (Dans la page "debouchees.html", l'attribut "for" n'a pas besoin d'être utilisé étant donné
+          que l'élément du formulaire est compris dans la balise label). Pour que le libellé soit bien lié à l'élément du formulaire, il faut que l'attribut "for" dans le label soit identique à l'attribut "id"
+          dans le champ associé.
+        </p>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#boundErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="boundErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 7rem" readonly>
+<label for="firstName" name="prenom" class="form-label">Prénom</label>
+<input type="text" class="form-control" id="a" placeholder="" value="Prénom" required="">
+</textarea>             
+</div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Utiliser les attributs "for" et "id".
+            </li>
+            <li>
+              Veiller à ce que "for" et "id" soient identiques.
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#boundReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="boundReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 6rem" readonly>
+<label for="firstName" name="prenom" class="form-label">Prénom</label>
+<input type="text" class="form-control" id="firstName" placeholder="" value="Prénom" required=""></textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Liste numérotée</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "debouche.html", on a une liste des différentes
+          débouchés du DUT MMI. Le problème est que cette liste est ordonnée ce qui pose un conflit dans le sens
+          de la liste. En effet, il n'est pas censé s'agir d'un classement (d'autant plus que la liste commence à 5). Cela provoque donc chez l'utilisateur 
+          une certaine incompréhension. Ce n'est donc pas la bonne balise HTML qui est utilisé ici.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/liste.JPG" class="img-fluid img" alt="Capture de la liste numérotée sur la page debouchees.html" />
+          <figcaption>
+            Capture de la liste numérotée sur la page "debouchees.html".
+          </figcaption>
+        </figure>
+
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#listeErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="listeErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 18rem" readonly>
+<ol class="row g-0" start="5">
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+</ol></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateur, nous vous recomandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Utiliser la balise ul (liste non ordonnée)
+            </li>
+          </ul>
+        </section>
+
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#listeSolution"
+                aria-expanded="true"
+              >
+                Code HTML associé à la solution
+              </button>
+            </h2>
+            <div
+              id="listeSolution"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 18rem" readonly>
+<ul>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+</ul></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Problème de transition au hover</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Sur la page "accueil.html" il y a une transition au survol de la souris 
+          pour les boîtes compétences. Le problème est que la transition se joue uniquement dans un sens, c'est-à-dire que
+          lorsqu'on quitte l'élément survolé, il reprend sa forme d'origine de manière brutale ce qui n'est pas très élégant. 
+          De plus, la transition se fait en 8456ms soit un peu plus de 8 secondes ce qui est beaucoup trop long et demande du temps
+          d'attente à l'utilisateur qui se demande ce qui va se passer à la fin de l'animation.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/transition.jpg" class="img-fluid img" alt="Capture d'écran du hover sur l'une des compétences de la page accueil.html" />
+          <figcaption>
+            Capture du hover sur l'une des compétences de la page "accueil.html".
+          </figcaption>
+          
+        </figure>
+
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#transitionErreur"
+                aria-expanded="true"
+                aria-controls="transitionErreur"
+              >
+                Code CSS associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="transitionErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 18rem" readonly>
+.competence:hover {
+  transition: transform 8546ms;
+  transform: scale(1.11);
+}</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer l'expérience utilisateurs, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Ajouter une transition à la boite compétence elle-même.
+            </li>
+            <li>
+              Diminuer la durée de la transition.
+            </li>
+          </ul>
+        </section>
+
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#transitionSolution"
+                aria-expanded="true"
+                aria-controls="transitionSolution"
+              >
+                Code CSS associé à la solution
+              </button>
+            </h2>
+            <div
+              id="transitionSolution"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 18rem" readonly>
+.competence{
+  transition: transform 1.5ms;
+}
+
+.competence:hover {
+  transition: transform 1.5ms;
+  transform: scale(1.11);
+}</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      
+
+    </main>
+
+    <footer class="my-2 pb-2 pt-2 text-muted text-center text-small">
+      <p class="mb-1">
+        &copy; Maxime Petit MMI1 2021
+      </p>
+      <ul class="list-inline">
+        
+        <li class="list-inline-item">
+          <a title="Consignes du devoir" href="http://danyellow.net/devoir-mmi/consignes.html" >Consignes</a>
+        </li>
+        <li class="list-inline-item" aria-hidden="true">•</li>
+        <li class="list-inline-item">
+          <a title="Page Accueil" href="index.html">Accueil</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Expérience utilisateur" href="ux.html" >Expérience utilisateur</a>
+        </li>
+          <li class="list-inline-item">
+            <a title="Page Accessibilité" href="accessibilite.html" >Accessibilité</a>
+        </li>
+        <li class="list-inline-item">
+        <a title="Page HTML/CSS" href="htmlcss.html" >HTML/CSS</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Javascript" href="javascript.html">Javascript</a>
+            </li>
+      </ul>
+    </footer>
+  
+
+  </body>
+</html>

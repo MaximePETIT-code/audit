@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+      AUDIT - HTML/CSS
+    </title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top p-3">
+      <a class="navbar-brand px-3" href="index.html">BOB AGENCY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-nav px-3">
+          <a class="nav-item nav-link" href="ux.html">Expérience utilisateur</a>
+          <a class="nav-item nav-link" href="accessibilite.html">Accessibilité</a>
+          <a class="nav-item nav-link active" href="htmlcss.html">HTML/CSS</a>
+          <a class="nav-item nav-link" href="javascript.html">Javascript</a>
+      </div>
+    </div>
+  </nav>
+    <header class="vh-45 bg-primary">
+      <section
+        class="text-light mx-0 row h-100 align-items-center justify-content-center text-center"
+      >
+        <article class="col-12 header-contain">
+          
+          <h1 class="fs-1 fw-bold">Audit Bob Agency <span class="fs-3">(par Maxime Petit)</span></h1>
+          <p class="fs-4">Expérience utilisateur, HTML/CSS, Accessibilité, Javascript / Jquery</p>
+
+        </article>
+      </section>
+    </header>
+    <main class="container pt-5">
+      <p class="fs-1 fw-bold">
+        <span>
+          HTML/CSS</span>
+      </p>
+      <hr class="my-4 border-top border-3 border-dark" />
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Pas de fichier "index.html"</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> La page d'accueil du site est nommé "accueil.html" cependant cela ne devrait pas
+          être le cas. En effet, la page d'accueil d'un site web doit <span class="fw-bold">obligatoirement</span> être nommée "index.html".
+          Imaginons que l'adresse du site soit "https://www.butmmi.fr/". Lorsque l'utilisateur entre cette adresse, le navigateur cherche en réalité "https://www.butmmi.fr/index.html" et si jamais le fichier "index.html" n'existe pas, le navigateur indiquera que l'URL demandé n'a pas été trouvé.
+          Ici pour accéder au site, on doit donc entrer l'adresse "https://www.butmmi.fr/accueil.html" ce qui représente un <span class="fw-bold">gros problème</span>.
+        </p>
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Renommer "accueil.html" par "index.html".
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Absence du doctype</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "debouchees.html" on peut remarquer l'absence du préamble DOCTYPE html.
+          Il s'agit d'un problème critique puisque le doctype est un composant essentiel d'un document HTML de qualité. En effet,
+          les navigateurs se comportent de manière plus prévisible lorsqu'ils analysent des documents HTML commençant par une déclaration
+          du doctype. Son but est d'empêcher un navigateur de passer en ce qu'on appelle le "quirks mode".
+        </p>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter le doctype html en chaque début de page HTML.
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Les commentaires</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans le code HTML pour la page "acceuil.html", des commentaires sont laissés. Bien que les commentaires ne soient pas pris en compte 
+          dans le contenu textuel du site internet, ils sont tout de même stockés et prennent donc de la place inutilement. De plus, ils sont accessibles depuis le code
+          source de la page. Ici, cela s'avère être un problème critique puisque dans la page "accueil.html" un commentaire contient des données 
+          sensibles (nom d'utilisateur et mot de passe de la base de données).
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/commentaires.jpg" class="img-fluid img" alt="Capture des commentaires sur la page accueil.html" />
+          <figcaption>
+            Capture des commentaires sur la page "accueil.html".
+          </figcaption>
+        </figure>
+        
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Retirer les commentaires lors de la mise en ligne du site.
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Mauvaise identation</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la plupart des pages HTML du site, il y a des parties où l'identation est mauvaise.
+          Par exemple, dans la page "accueil.html", les div contenus dans la balise main ne sont pas bien indentés. En effet, la balise main étant 
+          identé au niveau 2, les enfants de cette balise sont censés être indentés au niveau 3. Ce genre d'erreur peut causer certains conflits dans le
+          code notamment lorsqu'on voudra gérer le CSS de la page.
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/identation.jpg" class="img-fluid img" alt="Capture d'une mauvaise indentation" />
+          <figcaption>
+            Exemple d'une mauvaise indentation dans la page "accueil.html".
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Régler les problèmes d'indentations.
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+      
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Mauvaise utilisation href</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "accueil.html", un hyperlien est défini dans une 
+          balise span en utilisant l'évènement onclick et localtion.href ce qui pose problème puisqu'on ne peut ouvrir 
+          la page dans un nouvel onglet par exemple. De plus, l'hyperlien est mauvais, il mène vers une page
+          indisponible. 
+        </p>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#hrefErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="hrefErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: auto; resize: none;" readonly>
+<span onclick="location.href=&#39;/contact.html&#39;">Aller à la page de contact !</span></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Utiliser l'élément d'ancre "a".
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#hrefReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="hrefReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: auto; resize: none;" readonly>
+<a href="/contact.html">Aller à la page contact !</a></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Attributs laissés vides</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans le code HTML de chaque page, l'élement body possède les attributs class et style
+          vides. Ils sont donc inutiles et prennent de la place dans le code pour aucune raison valable.
+        </p>
+        
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Ajouter un nom de classe et des propriétés dans style.
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Utilisation de la méthode GET</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "debouchees.html", le formulaire utilise la méthode GET. La méthode get 
+          fait passer les données via l'URL. Cela pose un énorme problème de sécurité étant donné que les réponses au formulaire contiennent des
+          données sensibles relatives à la carte de crédit.
+        </p>
+
+        <figure class="text-muted text-center">
+          <img src="assets/images/get.jpg" class="img-fluid img" alt="Capture d'écran de l'URL du site après avoir transmis le formulaire" />
+          <figcaption>
+            Voici à quoi ressemble l'URL du site après avoir transmis le formulaire.
+          </figcaption>
+        </figure>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#methodeErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="methodeErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 7rem" readonly>
+<form class="needs-validation" novalidate="" method="GET">
+  [...]
+</form>
+</textarea>             
+</div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Utiliser la méthode POST.
+            </li>
+            <li>
+              Ajouter l'attribut action indiquant l'emplacement où les données doivent être envoyées.
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#methodeReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="methodeReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 6rem" readonly>
+<form class="needs-validation" novalidate="" action="/page" method="POST">
+  [...]
+</form></textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Utilisation du type text</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la page "debouchees.html" les input concernant le numéro de la carte de crédit et le CVV
+          sont des types texte. Malgré les patterns qui permettent que l'entré de caractère ne soit pas valide, il y a tout de même un problème. En effet,
+          sur téléphone portable, le clavier s'adapte au type de champ (clavier numérique pour le type number et clavier alphabétique pour le type texte).
+          Il est donc compliqué pour un utilisateur sur téléphone portable d'entrer son numéro de carte ainsi que le CVV.
+        </p>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#typeErreur"
+                aria-expanded="true"
+              >
+                Code HTML associé au problème ci-dessus
+              </button>
+            </h2>
+            <div
+              id="typeErreur"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 8rem" readonly>
+<label for="cc-number" class="form-label">Credit card number</label>
+<input type="text" class="form-control" id="cc-number" placeholder="" required="" pattern="[0-9]{16}" name="card-number">
+</textarea>             
+</div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Remplacer le type text par type number.
+            </li>
+          </ul>
+        </section>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#typeReco"
+                aria-expanded="true"
+              >
+                Code HTML associé à la recommandation
+              </button>
+            </h2>
+            <div
+              id="typeReco"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordion"
+            >
+              <div class="accordion-body">
+                <textarea class="w-100" style="height: 8rem" readonly>
+<label for="cc-number" class="form-label">Credit card number</label>
+<input type="number" class="form-control" id="cc-number" placeholder="" required="" pattern="[0-9]{16}" name="card-number">></textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Nomenclature des fichiers</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Les noms des fichiers (notamment les images) ou encore des id pour le formulaire de la page "contact.html" ne sont pas clairs et explicite ce qui amène à une perte de temps pour trouver à quoi renvoie le nom du fichier ou de l'id.
+          (encore plus si plusieurs personnes travaillent sur le projet). De plus, les noms des images ont des espaces ce qui augmente le risque de faire une erreur lorsqu'on intègre l'image dans le code HTML.
+        </p>
+        
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code HTML, nous vous recommandons les axes
+            d'améliorations suivants :
+          </p>
+          <ul>
+            <li>
+              Utiliser des noms d'images explicite.
+            </li>
+            <li>
+              Écrire le nom des images en Camel case ou remplacer les espaces par des "_".
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="audit mt-5">
+        
+        <p class="fs-3 fw-bold">
+          <span>
+            Utilisation de !important</span>
+        </p>
+
+        <p>
+          <span class="fw-bold">Problème :</span> Dans la feuille de style du site, il est utilisé à plusieurs reprises la déclaration "!important".
+          Il faut savoir qu'en css il existe des règles de cascade et d'héritage. La déclaration "!important" à la propriété d'annuler toute priorité
+          dans le css ce qui remplace donc les règles de la cascade. Cependant, il est recommander d'utiliser !important uniquement en dernier recours et
+          il peut totalement être éviter ici. (Le framework bootstrap utilise !important dans son css mais nous n'avons pas besoin de l'utiliser si la feuille de
+          style est placée après celle de boostrap dans le head de la page HTML).
+        </p>
+        <figure class="text-muted text-center">
+          <img src="assets/images/important.jpg" class="img-fluid img" alt="Capture d'écran de l'utilisation de !important dans la feuille de style" />
+          <figcaption>
+            Capture de l'utilisation de !important dans la feuille de style.
+          </figcaption>
+        </figure>
+
+        <section>
+          <p>
+            <span class="fw-bold">Recommandation :</span> Dans le cadre d'une démarche
+            visant à améliorer le code CSS, nous vous recommandons l'axe
+            d'amélioration suivant :
+          </p>
+          <ul>
+            <li>
+              Éviter l'utilisation de !important.
+            </li>
+          </ul>
+        </section>
+        
+      </section>
+
+
+
+      
+
+    </main>
+
+    <footer class="my-2 pb-2 pt-2 text-muted text-center text-small">
+      <p class="mb-1">
+        &copy; Maxime Petit MMI1 2021
+      </p>
+      <ul class="list-inline">
+        
+        <li class="list-inline-item">
+          <a title="Consignes du devoir" href="http://danyellow.net/devoir-mmi/consignes.html" >Consignes</a>
+        </li>
+        <li class="list-inline-item" aria-hidden="true">•</li>
+        <li class="list-inline-item">
+          <a title="Page Accueil" href="index.html">Accueil</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Expérience utilisateur" href="ux.html" >Expérience utilisateur</a>
+        </li>
+          <li class="list-inline-item">
+            <a title="Page Accessibilité" href="accessibilite.html" >Accessibilité</a>
+        </li>
+        <li class="list-inline-item">
+        <a title="Page HTML/CSS" href="htmlcss.html" >HTML/CSS</a>
+        </li>
+        <li class="list-inline-item">
+            <a title="Page Javascript" href="javascript.html">Javascript</a>
+            </li>
+      </ul>
+    </footer>
+  
+
+  </body>
+</html>
