@@ -1,6 +1,6 @@
 # Audit Bob Agency (Maxime PETIT)
 ## Objectif 🎯
-Ce projet est un audit du site [BUT MMI](http://danyellow.net/devoir-mmi/accueil.html). Cet audit a pour but d'évaluer :
+Ce projet est un audit du site fictif [BUT MMI](http://danyellow.net/devoir-mmi/accueil.html). Cet audit a pour but d'évaluer :
 - L'expérience utilisateur
 - L'accessibilité
 - Le code HTML/CSS
