@@ -21,3 +21,13 @@ figcaption{
 textarea{
     padding-left: 10px;
 }
+
+.img-fluid{
+    max-width: 800px;
+}
+
+@media (max-width: 992px){
+    .img-fluid{
+        max-width: 100%;
+    }
+}
